@@ -30,7 +30,7 @@ dir_list = os.listdir(secrets_path)
 for secret_file in dir_list:
     pyAesCrypt.decryptFile(
         os.path.join(secrets_path, secret_file),
-        os.path.join(secrets_path, secret_file.replace(".aes", ".txt")),
+        os.path.join(secrets_path, secret_file.replace(".aes", "")),
         password)
 
 # remove all .aes files in secrets
@@ -55,12 +55,12 @@ dir_list_2 = os.listdir(secrets_path)
 for secret_file in dir_list_2:
     pyAesCrypt.encryptFile(
         os.path.join(secrets_path, secret_file),
-        os.path.join(secrets_path, secret_file.replace(".txt", ".aes")),
+        os.path.join(secrets_path, secret_file + ".aes"),
         password)
 
-# remove all .txt files in secrets
+# remove all non .aes files in secrets
 for item in dir_list_2:
-    if item.endswith(".txt"):
+    if not item.endswith(".aes"):
         os.remove(os.path.join(secrets_path, item))
 
 print("\n")
