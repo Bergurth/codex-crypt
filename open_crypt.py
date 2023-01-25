@@ -6,19 +6,22 @@ from colorama import Fore, Style
 import datetime
 from art import *
 
-print(f"{Fore.GREEN}{skull}{Style.RESET_ALL}")
-print(f"{Fore.GREEN}{banner}{Style.RESET_ALL}")
-print(f"{Fore.GREEN}{banner2}{Style.RESET_ALL}")
-password = getpass()
+print(f"{Fore.GREEN}{line}")
+print(f"{skull}")
+print(f"{banner}")
+print(f"{banner2}")
+password = getpass(prompt="      Password: ")
+print(f"{line}{Style.RESET_ALL}")
+
 min_decrypted = int(
-    input("Enter number of minutes needed to work in encrypted directory: ")
+    input("\n  Enter number of minutes needed to work in encrypted directory: ")
 )
 
 time_max = 40
 
 if(min_decrypted >= time_max):
     print(f"{Fore.RED}{Style.BRIGHT} {time_max} is the current max decrypted minutes")
-    sys.exit('You exceeded maximum decrypt time')
+    sys.exit(' You exceeded maximum decrypt time')
 
 secrets_path = os.path.join(os.getcwd(), "secrets")
 dir_list = os.listdir(secrets_path)
