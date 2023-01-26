@@ -28,10 +28,13 @@ dir_list = os.listdir(secrets_path)
 
 
 for secret_file in dir_list:
-    pyAesCrypt.decryptFile(
-        os.path.join(secrets_path, secret_file),
-        os.path.join(secrets_path, secret_file.replace(".aes", "")),
-        password)
+    try:
+        pyAesCrypt.decryptFile(
+            os.path.join(secrets_path, secret_file),
+            os.path.join(secrets_path, secret_file.replace(".aes", "")),
+            password)
+    except ValueError as e:
+        sys.exit(f"{Fore.RED}     Wrong password  -- or file(s) corrupted.{Style.RESET_ALL}")
 
 # remove all .aes files in secrets
 for item in dir_list:
