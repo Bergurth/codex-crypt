@@ -1,6 +1,6 @@
 # Here first is project specific git-ignore
 /secrets
-
+/sanctum
 
 # below is standar python .gitignore
 
