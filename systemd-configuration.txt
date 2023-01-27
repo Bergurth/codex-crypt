@@ -20,3 +20,10 @@ ExecStart=/usr/bin/bash /home/bergurth/scripts/pre-shutdown.sh  # your path and 
 
 [Install]
 WantedBy=final.target    
+
+--------------------------------------------------------------------------------
+
+❯_: cat pre-shutdown.sh 
+rm -rf /home/bergurth/projects/codex-crypt/secrets/*
+exit 0
+
