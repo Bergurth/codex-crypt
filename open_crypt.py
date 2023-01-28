@@ -18,7 +18,7 @@ min_decrypted = int(
 )
 
 time_max = 40
-sec_per_min = 10
+sec_per_min = 30
 
 if(min_decrypted >= time_max):
     print(f"{Fore.RED}{Style.BRIGHT} {time_max} is the current max decrypted minutes")
@@ -73,7 +73,6 @@ for secret_file in dir_list_2:
 
 dir_list_3 = os.listdir(secret_path)
 
-
 # clear sanctum <-- perhaps questionable ..
 # would create race condition .. maybe sanctum
 # should hold everything ever encrypted ..
@@ -87,7 +86,6 @@ for item in sanctum_list:
 # and copy all .aes to the inner sanctum.
 for item in dir_list_3:
     if not item.endswith(".aes"):
-        print(item)
         os.remove(os.path.join(secret_path, item))
     else:
         shutil.copy(

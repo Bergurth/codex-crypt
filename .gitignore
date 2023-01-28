@@ -1,6 +1,7 @@
 # Here first is project specific git-ignore
 /secrets
 /sanctum
+pre-shutdown.sh
 
 # below is standar python .gitignore
 
