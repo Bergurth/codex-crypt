@@ -18,7 +18,7 @@ min_decrypted = int(
 )
 
 time_max = 40
-sec_per_min = 30
+sec_per_min = 60
 
 if(min_decrypted >= time_max):
     print(f"{Fore.RED}{Style.BRIGHT} {time_max} is the current max decrypted minutes")
