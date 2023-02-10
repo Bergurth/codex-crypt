@@ -1,5 +1,5 @@
 # Codex Crypt
-A minimal, Personal or company/organization secret management system. A Chamber of Secrets, if you will.
+A minimal, personal or company/organization secret management system. A Chamber of Secrets, if you will.
 
 # Installation
 ```
